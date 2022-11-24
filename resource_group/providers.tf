@@ -13,6 +13,8 @@ terraform {
         container_name       = "tfstate"
         key                  = "terraform.tfstate"
     }  
+  
+} 
     random = {
       source  = "hashicorp/random"
       version = "~>3.0"
@@ -20,8 +22,6 @@ terraform {
   
   provider "azurerm" {
   features {}
-
-  }
 }
 
 
