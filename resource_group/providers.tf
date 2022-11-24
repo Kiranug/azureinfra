@@ -14,11 +14,13 @@ terraform {
         key                  = "terraform.tfstate"
     }  
   
-} 
     random = {
       source  = "hashicorp/random"
       version = "~>3.0"
     }
+  
+} 
+  
   
   provider "azurerm" {
   features {}
