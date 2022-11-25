@@ -19,7 +19,7 @@ variable "client_id" {
 }
 
 variable "certificate_path" {
-  type    = pfx
+  type    = string
   default     = ""
   description = "Default rg "
 }
