@@ -16,6 +16,6 @@ provider "azurerm" {
   subscription_id             = "var.ARM_SUBSCRIPTION_ID"
   client_id                   = "var.ARM_CLIENT_ID"
   client_certificate_path     = "/home/azureuser/service-principal1.pfx"
-  client_certificate_password = "var.ARM_CLIENT_CERTIFICATE_PASSWORD"
+  client_certificate_password = "Aws@123456!"
   tenant_id                   = "var.ARM_TENANT_ID"
 }
