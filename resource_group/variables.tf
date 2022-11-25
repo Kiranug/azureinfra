@@ -1,9 +1,36 @@
 variable "resource_group_location" {
   default     = "eastus"
-  description = "Location of the resource group."
+  description = "The project ID to host the cluster in"
 }
 
 variable "resource_group_name_prefix" {
   default     = "rg"
-  description = "Prefix of the resource group name that's combined with a random ID so name is unique in your Azure subscription."
-}   
+  description = "Default rg "
+}
+
+variable "subscription_id" {
+  default     = "rg"
+  description = "Default rg "
+}
+
+variable "client_id" {
+  default     = "rg"
+  description = "Default rg "
+}
+
+variable "certificate_path" {
+  default     = "rg"
+  description = "Default rg "
+}
+
+
+variable "client_pass" {
+  default     = "rg"
+  description = "Default rg "
+}
+
+variable "tenant_id" {
+  default     = "rg"
+  description = "Default rg "
+}
+
