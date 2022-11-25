@@ -9,11 +9,13 @@ variable "resource_group_name_prefix" {
 }
 
 variable "subscription_id" {
+  type    = string
   default     = "rg"
   description = "Default rg "
 }
 
 variable "client_id" {
+  type    = string
   default     = "rg"
   description = "Default rg "
 }
@@ -26,6 +28,7 @@ variable "client_secret" {
 }
 
 variable "tenant_id" {
+  type    = string
   default     = "rg"
   description = "Default rg "
 }
