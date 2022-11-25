@@ -19,13 +19,15 @@ variable "client_id" {
 }
 
 variable "certificate_path" {
-  default     = "rg"
+  type    = string
+  default     = ""
   description = "Default rg "
 }
 
 
 variable "client_pass" {
-  default     = "rg"
+  type    = string
+  default     = ""
   description = "Default rg "
 }
 
