@@ -8,6 +8,14 @@ terraform {
       version = "=3.0.0"
     }
   }
+  
+  # Terraform State Storage to Azure Storage Container
+  backend "azurerm" {
+    resource_group_name   = "tfstate"
+    storage_account_name  = "tfstate30935"
+    container_name        = "tfstatefiles"
+    key                   = "dev-terraform.tfstate"
+  } 
 }
 
 # Configure the Microsoft Azure Provider
