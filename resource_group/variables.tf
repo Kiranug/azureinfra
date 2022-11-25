@@ -26,7 +26,7 @@ variable "certificate_path" {
 
 
 variable "client_pass" {
-  type    = float
+  type    = string
   default     = ""
   description = "Default rg "
 }
