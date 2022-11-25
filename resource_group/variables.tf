@@ -18,14 +18,8 @@ variable "client_id" {
   description = "Default rg "
 }
 
-variable "certificate_path" {
-  type    = string
-  default     = ""
-  description = "Default rg "
-}
 
-
-variable "client_pass" {
+variable "client_secret" {
   type    = string
   default     = ""
   description = "Default rg "
