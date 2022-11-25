@@ -13,9 +13,9 @@ terraform {
 provider "azurerm" {
   features {}
 
-  subscription_id             = "var.ARM_SUBSCRIPTION_ID"
-  client_id                   = "var.ARM_CLIENT_ID"
+  subscription_id             = "5db014fe-1501-4706-a3a2-e0fb1f0ecb10"
+  client_id                   = "90117df8-8825-455a-82df-3eea5d6ddf36"
   client_certificate_path     = "/home/azureuser/service-principal1.pfx"
   client_certificate_password = "Aws@123456!"
-  tenant_id                   = "var.ARM_TENANT_ID"
+  tenant_id                   = "4514e9f9-4390-4c50-aa07-78ca05c287b6"
 }
