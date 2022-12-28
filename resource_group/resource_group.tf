@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "rg1" {
 
 resource "azurerm_resource_group" "southcenter" {
   location = var.resource_group_location
-  name     = random_pet.rg_name1.id
+  name     = random_pet.rg_name2.id
 }
 
 
