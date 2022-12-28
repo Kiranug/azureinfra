@@ -1,5 +1,6 @@
 resource_group_location    = "eastus"
 resource_group_name_prefix = "dev"
+resource_group_name_qa     = "qa"
 ARM_CLIENT_ID                  = "var.ARM_CLIENT_ID"
 ARM_CLIENT_SECRET              =   "var.ARM_CLIENT_SECRET"
 ARM_SUBSCRIPTION_ID            = "var.ARM_SUBSCRIPTION_ID"
