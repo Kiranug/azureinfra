@@ -11,6 +11,10 @@ variable "resource_group_name_dev" {
   default     = "dev"
   description = "Default rg "
 }
+variable "resource_group_name_qa" {
+  default     = "qa"
+  description = "Default rg "
+}
 variable "ARM_SUBSCRIPTION_ID" {
   type    = string
   default     = "rg"
