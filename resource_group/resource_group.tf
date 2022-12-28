@@ -16,6 +16,10 @@ resource "azurerm_resource_group" "rg1" {
   name     = random_pet.rg_name1.id
 }
 
+resource "random_pet" "rg_name2" {
+  prefix = var.resource_group_name_qa
+}
+
 resource "azurerm_resource_group" "southcenter" {
   location = var.resource_group_location
   name     = random_pet.rg_name2.id
