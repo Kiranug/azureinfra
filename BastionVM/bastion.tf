@@ -10,7 +10,7 @@ resource "azurerm_network_interface" "example" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = var.bastion_subnet_name.id
+    subnet_id                     = var.bastion_subnet_name
     private_ip_address_allocation = "Dynamic"
   }
 }
