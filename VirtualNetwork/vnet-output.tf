@@ -22,6 +22,14 @@ output "web_subnet_id" {
   description = "WebTier Subnet ID"
   value = azurerm_subnet.websubnet.id
 }
+output "bastion_subnet_name" {
+  description = "bastion Subnet Name"
+  value = azurerm_subnet.bastionsubnet.name
+}
+output "bastion_subnet_name" {
+  description = "bastion Subnet ID"
+  value = azurerm_subnet.bastionsubnet.id
+}
 
 # Network Security Outputs
 ## Web Subnet NSG Name 
