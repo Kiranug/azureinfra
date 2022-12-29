@@ -3,7 +3,6 @@ resource "azurerm_resource_group" "example" {
   location = "West Europe"
 }
 
-
 resource "azurerm_network_interface" "example" {
   name                = "bastion-nic"
   location            = azurerm_resource_group.example.location
@@ -11,7 +10,7 @@ resource "azurerm_network_interface" "example" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "${data.azurerm_subnet.bastionsubnet.id}"
+    subnet_id                     = var.bastion_subnet_name
     private_ip_address_allocation = "Dynamic"
   }
 }
