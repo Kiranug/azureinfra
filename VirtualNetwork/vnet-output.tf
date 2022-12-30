@@ -30,7 +30,7 @@ output "bastion_subnet_name" {
   description = "bastion Subnet Name"
   value = azurerm_subnet.bastionsubnet.name
 }
-output "bastion_subnet_name" {
+output "bastion_subnet_id" {
   description = "bastion Subnet ID"
   value = azurerm_subnet.bastionsubnet.id
 }
