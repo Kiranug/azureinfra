@@ -3,6 +3,14 @@ resource "azurerm_resource_group" "example" {
   location = "West Europe"
 }
 
+data "azurerm_subnet" "mysubnet" {
+  name = "azurerm_subnet.${var.bastion_subnet_name}.name"
+}
+
+output "subnetid" {
+  value = data.azurerm_subnet.mysubnet.id
+}
+ 
 resource "azurerm_network_interface" "example" {
   name                = "bastion-nic"
   location            = azurerm_resource_group.example.location
@@ -10,7 +18,7 @@ resource "azurerm_network_interface" "example" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = var.bastion_subnet_name
+    subnet_id                     = data.azurerm_subnet.mysubnet.id
     private_ip_address_allocation = "Dynamic"
   }
 }
