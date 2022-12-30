@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "example" {
 }
 
 data "azurerm_subnet" "mysubnet" {
-  name = "azurerm_subnet.${var.bastion_subnet_name}.name"
+  name = azurerm_subnet.bastionsubnet.name
 }
 
 output "subnetid" {
