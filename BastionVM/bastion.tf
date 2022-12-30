@@ -20,7 +20,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   location            = data.terraform_remote_state.networking.outputs.Resource_group_location
   size                = "Standard_F1"
   network_interface_ids = [
-    azurerm_network_interface.example.id,
+    azurerm_network_interface.example.id
   ]
   
   os_profile {
