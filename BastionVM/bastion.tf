@@ -19,11 +19,18 @@ resource "azurerm_linux_virtual_machine" "example" {
   resource_group_name = data.terraform_remote_state.networking.outputs.Resource_group_name
   location            = data.terraform_remote_state.networking.outputs.Resource_group_location
   size                = "Standard_F1"
-  admin_username      = "adminuser"
-  admin_password      = "Swami@123"
   network_interface_ids = [
     azurerm_network_interface.example.id,
   ]
+  
+  os_profile {
+  computer_name  = var.bastionvm_name
+  admin_username = "adminuser"
+  admin_password = "Swami@123!"
+  }
+  os_profile_linux_config {
+    disable_password_authentication = false
+  }
 
   os_disk {
     caching              = "ReadWrite"
