@@ -1,5 +1,9 @@
 # Virtual Network Outputs
 ## Virtual Network Name
+output "Resource_group_name" {
+  description = "Resource_group Name"
+  value = azurerm_resource_group.rg.name
+}
 output "virtual_network_name" {
   description = "Virtual Network Name"
   value = azurerm_virtual_network.vnet.name
