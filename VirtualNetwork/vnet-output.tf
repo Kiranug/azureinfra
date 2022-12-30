@@ -4,6 +4,10 @@ output "Resource_group_name" {
   description = "Resource_group Name"
   value = azurerm_resource_group.rg.name
 }
+output "Resource_group_location" {
+  description = "Resource_group location"
+  value = azurerm_resource_group.rg.location
+}
 output "virtual_network_name" {
   description = "Virtual Network Name"
   value = azurerm_virtual_network.vnet.name
