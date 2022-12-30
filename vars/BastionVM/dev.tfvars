@@ -1,1 +1,1 @@
-bastionvm_name = "bastion_host"
+bastionvm_name = "bastionhost"
