@@ -15,7 +15,7 @@ resource "azurerm_network_interface" "example" {
 }
 
 resource "azurerm_virtual_machine" "example" {
-  name                  = "${var.prefix}-vm"
+  name                  = var.bastionvm_name
   location              = data.terraform_remote_state.networking.outputs.Resource_group_location
   resource_group_name   = data.terraform_remote_state.networking.outputs.Resource_group_name
   network_interface_ids = [ azurerm_network_interface.example.id]
