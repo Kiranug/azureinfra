@@ -2,31 +2,22 @@ resource "azurerm_resource_group" "example" {
   name     = "bastion-resources"
   location = "West Europe"
 }
-
-data "azurerm_subnet" "mysubnet" {
-  name = azurerm_subnet.bastionsubnet.name
-}
-
-output "subnetid" {
-  value = data.azurerm_subnet.mysubnet.id
-}
- 
 resource "azurerm_network_interface" "example" {
   name                = "bastion-nic"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = data.terraform_remote_state.networking.output.Resource_group_location
+  resource_group_name = data.terraform_remote_state.networking.output.Resource_group_name
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = data.azurerm_subnet.mysubnet.id
+    subnet_id                     = data.terraform_remote_state.networking.output.bastion_subnet_id
     private_ip_address_allocation = "Dynamic"
   }
 }
 
 resource "azurerm_linux_virtual_machine" "example" {
   name                = var.bastionvm_name
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = data.terraform_remote_state.networking.output.Resource_group_name
+  location            = data.terraform_remote_state.networking.output.Resource_group_location
   size                = "Standard_F1"
   admin_username      = "adminuser"
   admin_password      = "Swami@123"
