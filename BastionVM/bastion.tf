@@ -14,33 +14,40 @@ resource "azurerm_network_interface" "example" {
   }
 }
 
-resource "azurerm_linux_virtual_machine" "example" {
-  name                = var.bastionvm_name
-  resource_group_name = data.terraform_remote_state.networking.outputs.Resource_group_name
-  location            = data.terraform_remote_state.networking.outputs.Resource_group_location
-  size                = "Standard_F1"
-  network_interface_ids = [
-    azurerm_network_interface.example.id
-  ]
-  
-  os_profile {
-  computer_name  = var.bastionvm_name
-  admin_username = "adminuser"
-  admin_password = "Swami@123!"
-  }
-  os_profile_linux_config {
-    disable_password_authentication = false
-  }
+resource "azurerm_virtual_machine" "example" {
+  name                  = "${var.prefix}-vm"
+  location              = data.terraform_remote_state.networking.outputs.Resource_group_location
+  resource_group_name   = data.terraform_remote_state.networking.outputs.Resource_group_name
+  network_interface_ids = [ azurerm_network_interface.example.id]
+  vm_size               = "Standard_F1"
 
-  os_disk {
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
-  }
+  # Uncomment this line to delete the OS disk automatically when deleting the VM
+  # delete_os_disk_on_termination = true
 
-  source_image_reference {
+  # Uncomment this line to delete the data disks automatically when deleting the VM
+  # delete_data_disks_on_termination = true
+
+  storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
     sku       = "16.04-LTS"
     version   = "latest"
+  }
+  storage_os_disk {
+    name              = "myosdisk1"
+    caching           = "ReadWrite"
+    create_option     = "FromImage"
+    managed_disk_type = "Standard_LRS"
+  }
+  os_profile {
+    computer_name  = "hostname"
+    admin_username = "testadmin"
+    admin_password = "Password1234!"
+  }
+  os_profile_linux_config {
+    disable_password_authentication = false
+  }
+  tags = {
+    environment = "staging"
   }
 }
