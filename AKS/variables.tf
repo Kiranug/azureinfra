@@ -65,3 +65,28 @@ variable "aks_cluster_id" {
   default = "dev2"
   description = "Default rg "
 }
+
+variable "ARM_SUBSCRIPTION_ID" {
+  type    = string
+  default     = "rg"
+  description = "Default rg "
+}
+
+variable "ARM_CLIENT_ID" {
+  type    = string
+  default     = "rg"
+  description = "Default rg "
+}
+
+
+variable "ARM_CLIENT_SECRET" {
+  type    = string
+  default     = ""
+  description = "Default rg "
+}
+
+variable "ARM_TENANT_ID" {
+  type    = string
+  default     = "rg"
+  description = "Default rg "
+}
