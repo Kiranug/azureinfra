@@ -46,3 +46,19 @@ variable "windows_admin_password" {
   default = "P@ssw0rd1234"
   description = "This variable defines the Windows admin password k8s Worker nodes"  
 }
+
+
+variable "aks_cluster_kubernetes_version" {
+  type    = string
+  description = "Default rg "
+}
+
+variable "aks_cluster_name" {
+  type    = string
+  description = "Default rg "
+}
+
+variable "aks_cluster_id" {
+  type    = string
+  description = "Default rg "
+}
