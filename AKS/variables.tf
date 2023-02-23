@@ -50,15 +50,18 @@ variable "windows_admin_password" {
 
 variable "aks_cluster_kubernetes_version" {
   type    = string
+  default = "dev2"
   description = "Default rg "
 }
 
 variable "aks_cluster_name" {
   type    = string
+  default = "dev2"
   description = "Default rg "
 }
 
 variable "aks_cluster_id" {
   type    = string
+  default = "dev2"
   description = "Default rg "
 }
