@@ -76,6 +76,4 @@ network_profile {
 tags = {
   Environment = var.environment
 }
-
-
 }
