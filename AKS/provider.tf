@@ -26,7 +26,9 @@ terraform {
 provider "azurerm" {
   features {}
 }
-
+provider "azuread" {
+  use_microsoft_graph = true
+}
 # 3. Terraform Resource Block: Define a Random Pet Resource
 resource "random_pet" "aksrandom" {
 
