@@ -1,2 +1,2 @@
-appId    = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
-password = "********-****-****-****-************"
+appId    = "var.ARM_CLIENT_ID"
+password = "var.ARM_CLIENT_SECRET"
