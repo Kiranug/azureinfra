@@ -3,7 +3,7 @@
 }
 
 output "kubernetes_cluster_name" {
-  value = azurerm_kubernetes_cluster.aks_rg.name
+  value = azurerm_kubernetes_cluster.default.name
 }
 
 # output "host" {
