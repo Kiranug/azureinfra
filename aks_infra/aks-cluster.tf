@@ -1,4 +1,4 @@
-resource "azurerm_kubernetes_cluster" "default" {
+resource "azurerm_kubernetes_cluster" "aks_rg" {
   name                = "${azurerm_resource_group.aks_rg.name}"
   location            = "${azurerm_resource_group.aks_rg.location}"
   resource_group_name = "${azurerm_resource_group.aks_rg.name}"
