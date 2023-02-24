@@ -9,8 +9,12 @@ variable "location" {
   description = "Azure Region where all these resources will be provisioned"
   default = "Central US"
 }
-
-# Azure Resource Group Name
+variable "resource_group_location" {
+  type = string
+  description = "This variable defines the Resource Group"
+  default = "East US"
+}
+# Azure Resresource_group_locationource Group Name
 variable "resource_group_name" {
   type = string
   description = "This variable defines the Resource Group"
