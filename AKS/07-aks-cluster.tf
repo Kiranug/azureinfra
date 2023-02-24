@@ -9,10 +9,10 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
 
   default_node_pool {
     name       = "systempool"
-    vm_size    = "Standard_DS2_v2"
+    vm_size    = "Standard_B2s"
     orchestrator_version = data.azurerm_kubernetes_service_versions.current.latest_version
     enable_auto_scaling  = true
-    max_count            = 3
+    max_count            = 2
     min_count            = 1
     os_disk_size_gb      = 30
     type           = "VirtualMachineScaleSets"
@@ -50,7 +50,7 @@ linux_profile {
 
 # Network Profile
 network_profile {
-  load_balancer_sku = "Standard"
+  load_balancer_sku = "standard"
   network_plugin = "azure"
 }
 
