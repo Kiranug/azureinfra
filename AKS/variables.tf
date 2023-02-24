@@ -33,7 +33,7 @@ variable "environment" {
 
 # SSH Public Key for Linux VMs
 variable "ssh_public_key" {
-  default = "/opt/askprodkeys.pub"
+  default = "/opt/aksdev.pub"
   description = "This variable defines the SSH Public Key for Linux k8s Worker nodes"  
 }
 
