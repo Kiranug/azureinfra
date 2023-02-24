@@ -7,6 +7,10 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "=3.0.0"
     }
+    azuread = {
+      source  = "hashicorp/azuread"
+      version = "= 1.5.1"
+    }
       random = {
       source  = "hashicorp/random"
       version = "~> 3.0"
