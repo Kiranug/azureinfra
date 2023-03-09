@@ -1,3 +1,5 @@
+data "azuread_client_config" "current" {}
+
 # Create a resource group to hold the Azure Key Vault
 resource "azurerm_resource_group" "key_vault_rg" {
   name     = "my-key-vault-rg"
