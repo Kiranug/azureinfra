@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "key_vault_rg" {
 }
 
 # Create the Azure Key Vault
-resource "azurerm_key_vault" "terraformsp" {
+resource "azurerm_key_vault" "example" {
   name                = "my-key-vault"
   location            = "${azurerm_resource_group.key_vault_rg.location}"
   resource_group_name = "${azurerm_resource_group.key_vault_rg.name}"
@@ -35,18 +35,18 @@ resource "azurerm_key_vault" "terraformsp" {
 }
 
 # Create the Azure Service Principal
-resource "azurerm_service_principal" "terraformsp" {
+resource "azurerm_service_principal" "example" {
   name = "my-service-principal"
 }
 
 # Generate a random password for the Service Principal secret
-resource "random_password" "terraformsp" {
+resource "random_password" "example" {
   length = 16
 }
 
 # Store the Service Principal secret in the Azure Key Vault
-resource "azurerm_key_vault_secret" "terraformsp" {
+resource "azurerm_key_vault_secret" "example" {
   name         = "my-service-principal-secret"
-  value        = "${random_password.terraformsp.result}"
-  key_vault_id = "${azurerm_key_vault.terraformsp.id}"
+  value        = "${random_password.example.result}"
+  key_vault_id = "${azurerm_key_vault.example.id}"
 }
