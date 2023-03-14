@@ -1,3 +1,5 @@
+#this is azure copnfiguration 
+
 resource "azurerm_resource_group" "example" {
   name     = "bastion-resources"
   location = "West Europe"
